@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: distributor
+  name: ingest
+  namespace: tempo
+spec:
+  clusterIP: None
+  ports:
+  - name: distributor-jaeger-grpc
+    port: 14250
+    targetPort: 14250
+  - name: distributor-otlp-grpc
+    port: 4317
+    targetPort: 4317
+  selector:
+    app: distributor
+    name: distributor
+    tempo-gossip-member: "true"

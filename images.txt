@@ -1,0 +1,7 @@
+grafana/tempo:latest
+grafana/tempo-query:latest
+memcached:1.6.9-alpine
+minio/minio:latest
+prom/memcached-exporter:v0.6.0
+docker.io/grafana/promtail:2.7.0
+grafana/loki:2.6.1
